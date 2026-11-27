@@ -120,6 +120,7 @@
     <p>أروى عثمان | سماهر غريس</p>
 </footer>
 
+<script>
 const cityData = {
 abha: {
 name: "أبها",
@@ -218,41 +219,29 @@ currentExplorerCity = city;
 document.getElementById("selectedCityTitle").textContent =
 "اكتشف " + cityData[city].name;
 
-renderExplorer();
-}
+renderExplorer();}
 
-function showExplorerCategory(category) {
+ showExplorerCategory(category) {
 currentExplorerCategory = category;
-renderExplorer();
-}
-
+renderExplorer();}
 function renderExplorer() {
 const city = cityData[currentExplorerCity];
 const items = city[currentExplorerCategory];
 const results = document.getElementById("explorerResults");
-
 let html = <h3>${categoryNames[currentExplorerCategory]} في ${city.name}</h3>;
-
 if (items.length === 0) {
 html += <p>سيتم إضافة الأماكن والمعلومات قريبًا.</p>;
 } else {
 html += <div class="explorer-grid">;
 items.forEach(item => {
-  html += `
-    <div class="explorer-card">
-      <img src="￼{item.name}">
-      <h4>${item.name}</h4>
-    </div>
-  `;
+html += <div class="explorer-card"> <img src="{item.image}" alt="{item.name}"> <h4>${item.name}</h4> </div>;
 });
-
-html += `</div>`;
+html += </div>;
 }
-
 results.innerHTML = html;
 }
-
 renderExplorer();
+</script>
 
 </body>
 
