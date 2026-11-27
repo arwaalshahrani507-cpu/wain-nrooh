@@ -244,3 +244,61 @@ header h1 {
     width: 100%;
 }
 }
+
+/* تنسيق قسم استكشاف المدن */
+#cityExplorer {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+#cityExplorer .explorer-cities,
+#cityExplorer .explorer-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#cityExplorer button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+#cityExplorer .explorer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#cityExplorer .explorer-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#cityExplorer .explorer-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+#cityExplorer .explorer-card h4 {
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  #cityExplorer .explorer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  #cityExplorer .explorer-card img {
+    height: 130px;
+  }
+}

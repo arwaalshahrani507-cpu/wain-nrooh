@@ -65,6 +65,35 @@
     </ul>
 </section>
 
+<!-- قسم استكشاف المدن -->
+<section id="cityExplorer">
+
+  <h2>استكشف المدينة</h2>
+  <p>اختر مدينتك واكتشف أجمل الأماكن فيها</p>
+
+  <div class="explorer-cities">
+    <button onclick="selectExplorerCity('abha')">أبها</button>
+    <button onclick="selectExplorerCity('jeddah')">جدة</button>
+    <button onclick="selectExplorerCity('riyadh')">الرياض</button>
+    <button onclick="selectExplorerCity('taif')">الطائف</button>
+    <button onclick="selectExplorerCity('alula')">العلا</button>
+  </div>
+
+  <h3 id="selectedCityTitle">اكتشف أبها</h3>
+
+  <div class="explorer-categories">
+    <button onclick="showExplorerCategory('tourism')">الأماكن السياحية</button>
+    <button onclick="showExplorerCategory('restaurants')">المطاعم</button>
+    <button onclick="showExplorerCategory('cafes')">الكافيهات</button>
+    <button onclick="showExplorerCategory('entertainment')">الأماكن الترفيهية</button>
+    <button onclick="showExplorerCategory('history')">المعالم التاريخية</button>
+    <button onclick="showExplorerCategory('events')">الفعاليات والمهرجانات</button>
+  </div>
+
+  <div id="explorerResults"></div>
+
+</section>
+
 <section id="about">
     <h2>من نحن؟</h2>
 
@@ -90,6 +119,140 @@
     <p>جميع الحقوق محفوظة 2026</p>
     <p>أروى عثمان | سماهر غريس</p>
 </footer>
+
+const cityData = {
+abha: {
+name: "أبها",
+tourism: [],
+restaurants: [],
+cafes: [],
+entertainment: [],
+history: [
+{ name: "قصر شدا التاريخي", image: "images/abha4.JPEG" }
+],
+events: []
+},
+
+jeddah: {
+name: "جدة",
+tourism: [
+{ name: "واجهة جدة البحرية", image: "images/jeddah2.JPEG" }
+],
+restaurants: [],
+cafes: [],
+entertainment: [],
+history: [
+{ name: "جدة التاريخية", image: "images/jeddah1.JPEG" },
+{ name: "بيت نصيف", image: "images/jeddah5.JPEG" }
+],
+events: []
+},
+
+riyadh: {
+name: "الرياض",
+tourism: [
+{ name: "برج المملكة", image: "images/riyadh4.JPG" }
+],
+restaurants: [],
+cafes: [],
+entertainment: [],
+history: [
+{ name: "قصر المصمك", image: "images/riyadh1.JPEG" },
+{ name: "حي الطريف", image: "images/riyadh2.JPEG" },
+{ name: "المتحف الوطني السعودي", image: "images/riyadh3.JPEG" }
+],
+events: []
+},
+
+taif: {
+name: "الطائف",
+tourism: [
+{ name: "جبل الهدا", image: "images/taif2.JPEG" },
+{ name: "منطقة الشفا", image: "images/taif5.WEBP" }
+],
+restaurants: [],
+cafes: [],
+entertainment: [
+{ name: "منتزه الردف", image: "images/taif3.JPG" }
+],
+history: [
+{ name: "قصر شبرا", image: "images/taif1.JPEG" },
+{ name: "سوق عكاظ", image: "images/taif4.JPG" }
+],
+events: []
+},
+
+alula: {
+name: "العلا",
+tourism: [
+{ name: "جبل الفيل", image: "images/alula2.JPEG" },
+{ name: "البلدة القديمة", image: "images/alula3.JPEG" }
+],
+restaurants: [],
+cafes: [],
+entertainment: [],
+history: [
+{ name: "الحجر", image: "images/alula1.JPEG" },
+{ name: "جبل عكمة", image: "images/alula4.JPG" },
+{ name: "دادان", image: "images/alula5.JPEG" }
+],
+events: []
+}
+};
+
+const categoryNames = {
+tourism: "الأماكن السياحية",
+restaurants: "المطاعم",
+cafes: "الكافيهات",
+entertainment: "الأماكن الترفيهية",
+history: "المعالم التاريخية",
+events: "الفعاليات والمهرجانات"
+};
+
+let currentExplorerCity = "abha";
+let currentExplorerCategory = "history";
+
+function selectExplorerCity(city) {
+currentExplorerCity = city;
+
+document.getElementById("selectedCityTitle").textContent =
+"اكتشف " + cityData[city].name;
+
+renderExplorer();
+}
+
+function showExplorerCategory(category) {
+currentExplorerCategory = category;
+renderExplorer();
+}
+
+function renderExplorer() {
+const city = cityData[currentExplorerCity];
+const items = city[currentExplorerCategory];
+const results = document.getElementById("explorerResults");
+
+let html = <h3>${categoryNames[currentExplorerCategory]} في ${city.name}</h3>;
+
+if (items.length === 0) {
+html += <p>سيتم إضافة الأماكن والمعلومات قريبًا.</p>;
+} else {
+html += <div class="explorer-grid">;
+items.forEach(item => {
+  html += `
+    <div class="explorer-card">
+      <img src="￼{item.name}">
+      <h4>${item.name}</h4>
+    </div>
+  `;
+});
+
+html += `</div>`;
+}
+
+results.innerHTML = html;
+}
+
+renderExplorer();
 
 </body>
 
