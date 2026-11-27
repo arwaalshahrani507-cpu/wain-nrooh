@@ -221,26 +221,36 @@ document.getElementById("selectedCityTitle").textContent =
 
 renderExplorer();}
 
- showExplorerCategory(category) {
+function showExplorerCategory(category) {
 currentExplorerCategory = category;
-renderExplorer();}
+renderExplorer();
+}
+
 function renderExplorer() {
 const city = cityData[currentExplorerCity];
 const items = city[currentExplorerCategory];
 const results = document.getElementById("explorerResults");
-let html = <h3>${categoryNames[currentExplorerCategory]} في ${city.name}</h3>;
+
+let html = `<h3>${categoryNames[currentExplorerCategory]}</h3>`;
+
 if (items.length === 0) {
-html += <p>سيتم إضافة الأماكن والمعلومات قريبًا.</p>;
-} else {
-html += <div class="explorer-grid">;
-items.forEach(item => {
-html += <div class="explorer-card"> <img src="{item.image}" alt="{item.name}"> <h4>${item.name}</h4> </div>;
-});
-html += </div>;
-}
+    html = html + '<p>سيتم إضافة الأماكن والمعلومات قريبًا.</p>';
+  } else {
+    html = html + '<div class=\'explorer-grid\'>';
+    items.forEach(function(item) {
+      html = html + '<div class=\'explorer-card\'>';
+      html = html + '<img src=\'' + item.image + '\' alt=\'' + item.name + '\'>';
+      html = html + '<h4>' + item.name + '</h4>';
+      html = html + '</div>';
+    });
+    html = html + '</div>';
+  }
+
+
 results.innerHTML = html;
 }
 renderExplorer();
+
 </script>
 
 </body>
