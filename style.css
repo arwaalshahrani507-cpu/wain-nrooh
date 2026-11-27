@@ -1,0 +1,246 @@
+/* =====================================
+مشروع وين نروح - Wain Nrooh
+===================================== */
+/* الإعدادات العامة */
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: Arial, sans-serif;
+direction: rtl;
+background-color: #F5F1E8;
+color: #183B3D;
+line-height: 1.8;
+}
+/* رأس الصفحة */
+header {
+background-color: #123B40;
+color: white;
+text-align: center;
+padding: 35px 20px;
+}
+header h1 {
+font-size: 42px;
+color: #D6B978;
+margin-bottom: 8px;
+}
+header p {
+font-size: 18px;
+color: #E5E9DF;
+}
+/* القائمة الرئيسية */
+nav {
+background-color: #1D5555;
+padding: 18px;
+text-align: center;
+position: sticky;
+top: 0;
+z-index: 10;
+}
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+font-size: 17px;
+transition: 0.3s;
+}
+nav a:hover {
+color: #D6B978;
+}
+/* الواجهة الترحيبية */
+#home {
+background: linear-gradient(
+rgba(18, 59, 64, 0.75),
+rgba(18, 59, 64, 0.75)
+),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1400");
+background-size: cover;
+background-position: center;
+color: white;
+text-align: center;
+padding: 110px 20px;
+}
+#home h2 {
+font-size: 38px;
+color: #FFFFFF;
+margin-bottom: 15px;
+}
+#home p {
+font-size: 20px;
+margin-bottom: 20px;
+}
+#home a {
+display: inline-block;
+background-color: #D6B978;
+color: #123B40;
+padding: 10px 30px;
+border-radius: 25px;
+text-decoration: none;
+transition: 0.3s;
+}
+#home a:hover {
+background-color: #E5E9DF;
+}
+/* تنسيق الأقسام */
+section {
+padding: 55px 7%;
+text-align: center;
+}
+section h2 {
+color: #123B40;
+font-size: 30px;
+margin-bottom: 30px;
+}
+/* قسم المدن */
+#cities {
+background-color: #F5F1E8;
+}
+#cities h3 {
+color: #1D5555;
+font-size: 24px;
+margin-top: 25px;
+margin-bottom: 10px;
+}
+/* صور المدن - مقاس مربع 1:1 */
+#cities img {
+display: block;
+width: 100%;
+max-width: 350px;
+aspect-ratio: 1 / 1;
+height: auto;
+object-fit: cover;
+object-position: center;
+border-radius: 15px;
+border: 3px solid #D6B978;
+margin: 15px auto;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+transition: transform 0.3s ease;
+}
+/* تأثير الصور */
+#cities img:hover {
+transform: scale(1.03);
+}
+/* وصف المدن */
+#cities p {
+font-size: 17px;
+color: #183B3D;
+margin-bottom: 20px;
+}
+/* قسم الأماكن */
+#places {
+background-color: #E5E9DF;
+}
+#places ul {
+display: inline-block;
+text-align: right;
+font-size: 19px;
+padding-right: 25px;
+}
+#places li {
+margin: 12px 0;
+}
+/* قسم من نحن */
+#about {
+background-color: #FFFFFF;
+}
+#about p {
+max-width: 750px;
+margin: auto;
+font-size: 19px;
+}
+/* قسم الفيديو */
+video {
+display: block;
+width: 100%;
+max-width: 650px;
+aspect-ratio: 16 / 9;
+object-fit: cover;
+border: 3px solid #D6B978;
+border-radius: 15px;
+margin: 20px auto;
+background-color: #123B40;
+}
+/* نهاية الصفحة */
+footer {
+background-color: #123B40;
+color: white;
+text-align: center;
+padding: 25px;
+font-size: 16px;
+}
+/* الروابط */
+a {
+transition: color 0.3s ease;
+}
+/* تنسيق الآيباد والجوال */
+@media (max-width: 768px) {
+header {
+    padding: 25px 15px;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+nav {
+    padding: 12px 5px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 14px;
+}
+
+#home {
+    padding: 75px 15px;
+}
+
+#home h2 {
+    font-size: 28px;
+}
+
+#home p {
+    font-size: 16px;
+}
+
+section {
+    padding: 35px 15px;
+}
+
+section h2 {
+    font-size: 25px;
+}
+
+#cities h3 {
+    font-size: 21px;
+}
+
+#cities img {
+    max-width: 100%;
+    border-radius: 13px;
+}
+
+video {
+    border-radius: 13px;
+}
+}
+/* تنسيق الشاشات الصغيرة */
+@media (max-width: 400px) {
+header h1 {
+    font-size: 28px;
+}
+
+#home h2 {
+    font-size: 25px;
+}
+
+#cities img {
+    width: 100%;
+}
+}
