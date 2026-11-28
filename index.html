@@ -277,55 +277,61 @@ renderExplorer();
   console.log('Supabase connected successfully!');
 </script>
 
-<!-- قسم اقتراح مكان -->
-<section id="suggest-place" class="suggest-place">
+ <section id="suggest-place" class="suggest-place">
 
   <div class="suggest-container">
 
     <h2>اقترح مكانًا جديدًا</h2>
-<p>شاركنا الأماكن الجميلة وساعد الآخرين على اكتشافها.</p>
+
+<p>
+  تعرف على مكان جميل؟
+  شاركنا اقتراحك وساعد الآخرين على اكتشاف أماكن جديدة في السعودية.
+</p>
 
 <form id="placeSuggestionForm">
 
-  <label>اسم المكان</label>
-  <input id="placeName" type="text" required>
+  <label for="placeName">اسم المكان</label>
+  <input id="placeName" type="text"
+    placeholder="اكتبي اسم المكان" required>
 
-  <label>المدينة</label>
-  <input id="placeCity" type="text" required>
+  <label for="placeCity">المدينة</label>
+  <input id="placeCity" type="text"
+    placeholder="مثال: أبها" required>
 
-  <label>رابط Google Maps</label>
-  <input id="placeMap" type="url" placeholder="https://maps.google.com/">
+  <label for="placeMap">رابط Google Maps</label>
+  <input id="placeMap" type="url"
+    placeholder="الصقي رابط الموقع">
 
-  <label>التقييم</label>
+  <label for="placeRating">التقييم</label>
   <select id="placeRating">
     <option value="">اختياري</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
+    <option value="1">1 نجمة</option>
+    <option value="2">2 نجمتان</option>
+    <option value="3">3 نجوم</option>
+    <option value="4">4 نجوم</option>
+    <option value="5">5 نجوم</option>
   </select>
 
-  <label>مناسب لمن؟</label>
-  <select id="placeSuitable">
-    <option value="">اختاري</option>
+  <label for="placeSuitable">مناسب لمن؟</label>
+  <select id="placeSuitable" required>
+    <option value="">اختاري الفئة</option>
     <option value="العائلات">العائلات</option>
     <option value="الأصدقاء">الأصدقاء</option>
     <option value="الأفراد">الأفراد</option>
     <option value="الجميع">الجميع</option>
   </select>
 
-  <label>صورة المكان</label>
+  <label for="placeImage">صورة المكان</label>
   <input id="placeImage" type="file"
     accept="image/jpeg,image/png,image/webp" required>
 
-  <button type="submit">إرسال الاقتراح</button>
+  <button id="submitPlace" type="submit">
+    إرسال الاقتراح
+  </button>
 
-  <p id="suggestionMessage"></p>
+  <p id="suggestionMessage" role="status"></p>
 
 </form>
-</div>
-</section>
 
 </body>
 
