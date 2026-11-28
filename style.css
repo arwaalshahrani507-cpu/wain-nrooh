@@ -302,3 +302,111 @@ header h1 {
     height: 130px;
   }
 }
+/* تنسيق قسم اقترح مكاناً جديداً */
+#suggest-place.suggest-place,
+.suggest-place {
+  padding: 48px 16px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+.suggest-container {
+  width: 100%;
+  max-width: 640px;
+  background: #141414;
+  color: #f5f5f5;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.suggest-container h2,
+.suggest-container h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.suggest-container > p {
+  margin-top: 0;
+  margin-bottom: 22px;
+  color: #cccccc;
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.suggest-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.suggest-container label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #e6c86e;
+  margin-bottom: 4px;
+}
+
+.suggest-container input[type="text"],
+.suggest-container input[type="url"],
+.suggest-container input[type="file"],
+.suggest-container select,
+.suggest-container textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #1f1f1f;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.suggest-container input:focus,
+.suggest-container select:focus,
+.suggest-container textarea:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+}
+
+.suggest-container input[type="file"] {
+  padding: 9px;
+  cursor: pointer;
+}
+
+.suggest-container button[type="submit"] {
+  margin-top: 8px;
+  width: 100%;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d4af37, #b88b28);
+  color: #111111;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.suggest-container button[type="submit"]:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+#suggestionMessage {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.92rem;
+  min-height: 20px;
+}
