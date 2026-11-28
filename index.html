@@ -277,6 +277,54 @@ renderExplorer();
   console.log('Supabase connected successfully!');
 </script>
 
+<!-- قسم اقتراح مكان -->
+<section id="suggest-place" class="suggest-place">
+
+  <div class="suggest-container">
+
+    <h2>اقترح مكانًا جديدًا</h2>
+<p>شاركنا الأماكن الجميلة وساعد الآخرين على اكتشافها.</p>
+
+<form id="placeSuggestionForm">
+
+  <label>اسم المكان</label>
+  <input id="placeName" type="text" required>
+
+  <label>المدينة</label>
+  <input id="placeCity" type="text" required>
+
+  <label>رابط Google Maps</label>
+  <input id="placeMap" type="url" placeholder="https://maps.google.com/">
+
+  <label>التقييم</label>
+  <select id="placeRating">
+    <option value="">اختياري</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+
+  <label>مناسب لمن؟</label>
+  <select id="placeSuitable">
+    <option value="">اختاري</option>
+    <option value="العائلات">العائلات</option>
+    <option value="الأصدقاء">الأصدقاء</option>
+    <option value="الأفراد">الأفراد</option>
+    <option value="الجميع">الجميع</option>
+  </select>
+
+  <label>صورة المكان</label>
+  <input id="placeImage" type="file"
+    accept="image/jpeg,image/png,image/webp" required>
+
+  <button type="submit">إرسال الاقتراح</button>
+
+  <p id="suggestionMessage"></p>
+
+</form>
+
 </body>
 
 </html>
