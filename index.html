@@ -260,6 +260,23 @@ renderExplorer();
 
 </script>
 
+<!-- Supabase Connection -->
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+  const SUPABASE_URL = 'ضعي_https://hdqlcdhmnumysoidfjjs.supabase.co/rest/v1/_هنا';
+  const SUPABASE_PUBLISHABLE_KEY = 'ضعي_sb_publishable_ZaK_tifzntAYR4lvNJhcyA_9HNEkTaj_هنا';
+
+  const supabase = createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  window.supabase = supabase;
+
+  console.log('Supabase connected successfully!');
+</script>
+
 </body>
 
 </html>
